@@ -70,3 +70,4 @@ http://cqq.com:8888/spel2.xml
 - [Weblogic-CVE-2019-2725分析通杀poc](https://p0rz9.github.io/2019/05/22/Weblogic-CVE-2019-2725%E5%88%86%E6%9E%90%E9%80%9A%E6%9D%80poc/)
 - [Weblogic-CVE-2019-2725-通杀payload](http://www.lmxspace.com/2019/05/15/Weblogic-CVE-2019-2725-%E9%80%9A%E6%9D%80payload/)
 - [WebLogic wls9-async组件RCE分析（CVE-2019-2725）](https://lucifaer.com/2019/05/10/WebLogic%20wls9-async%E7%BB%84%E4%BB%B6RCE%E5%88%86%E6%9E%90%EF%BC%88CVE-2019-2725%EF%BC%89/)
+- [CNTA-2019-0014 wls9-async 反序列化 rce 分析](https://www.cnblogs.com/afanti/p/10792982.html)
