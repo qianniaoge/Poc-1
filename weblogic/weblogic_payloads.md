@@ -81,7 +81,7 @@ poc:
 
 ### CVE-2019-2729_v10_UnitOfWorkChangeSet_jdk7u21
 
-`oracle.toplink.internal.sessions.UnitOfWorkChangeSet`这个类只在v10中。
+`oracle.toplink.internal.sessions.UnitOfWorkChangeSet`这个类只在v10中，另外由于是jdk7u21这个gadget，所以有jdk版本限制。
 原理：
 >`UnitOfWorkChangeSet`类构造方法中直接调用了JDK原生类中的readObject()方法，并且其构造方法的接收参数恰好是字节数组，这就满足了上一个补丁中array标签的class属性值必须为byte的要求，再借助带index属性的void元素，完成向字节数组中赋值恶意序列化对象的过程，最终利用JDK 7u21反序列化漏洞造成了远程代码执行。通过巧妙的利用了void、array和Class这三个元素成功的打造了利用链。
 
