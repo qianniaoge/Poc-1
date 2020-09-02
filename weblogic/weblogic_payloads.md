@@ -195,6 +195,7 @@ poc（加载自定义类）:
 - [java反序列化RCE回显研究](https://xz.aliyun.com/t/5257)
 - [cve-2019-2729 weblogic 12.1.3版本分析](https://www.buaq.net/go-20897.html)
 - [weblogic wls9-async组件rce漏洞分析](https://balis0ng.com/post/lou-dong-fen-xi/weblogic-wls9-asynczu-jian-rcelou-dong-fen-xi)
+- https://github.com/lufeirider/CVE-2019-2725/blob/master/CVE-2019-2725.py
 - https://github.com/pimps/CVE-2019-2725/blob/master/weblogic_exploit.py
 - https://github.com/iceMatcha/CNTA-2019-0014xCVE-2019-2725/blob/master/weblogic_rce.py
 - https://github.com/starnightcyber/VEF/blob/ebbdeed2556d56fd0a59796f72c8643f277a5151/scripts/weblogic-cve-2019-2729.py
