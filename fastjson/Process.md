@@ -117,3 +117,68 @@ Constructor[] constructors = clazz.getDeclaredConstructors();
             }
         }
 ```
+
+然后判断这个类是不是接口或者抽象类：
+```java
+boolean isInterfaceOrAbstract = clazz.isInterface() || Modifier.isAbstract(clazz.getModifiers());
+```
+如果默认构造器为空，或者是接口/抽象类，进行另一个逻辑（暂时不看）
+```java
+if (defaultConstructor == null && builderClass == null || isInterfaceOrAbstract) 
+```
+继续往下：
+如果默认构造器不为空，
+```java
+            if (defaultConstructor != null) {
+                TypeUtils.setAccessible(defaultConstructor);
+            }
+```
+
+
+com\alibaba\fastjson\parser\deserializer\JavaBeanDeserializer.java
+```java
+object = createInstance(parser, type);
+```
+创建这个类型的实例。
+
+
+com\alibaba\fastjson\parser\deserializer\DefaultFieldDeserializer.java
+```java
+value = fieldValueDeserilizer.deserialze(parser, fieldType, fieldInfo.name);
+```
+解析对象的属性值。
+
+
+调用`setjndiNames`方法：
+```java
+setValue(object, value);
+```
+
+
+poc里的
+```json
+"Realms":[""]
+```
+则先对应到`org.apache.shiro.realm.Realm`，由于它是Interface，所以进入这个之前没深入的逻辑：
+```java
+if ((defaultConstructor == null && builderClass == null) || isInterfaceOrAbstract)
+```
+
+com\alibaba\fastjson\util\JavaBeanInfo.java
+判断方法名是否以get开头，并且get后面的第一个字符是大写。
+```java
+if (builderClass == null && methodName.startsWith("get") && Character.isUpperCase(methodName.charAt(3)))
+```
+如果有参数，则不选择：
+```java
+                if (method.getParameterTypes().length != 0) {
+                    continue;
+                }
+```
+
+com\alibaba\fastjson\parser\ParserConfig.java
+由于是接口，所以拿到的BeanInfo没啥东西，只知道它的类型是什么：
+```java
+JavaBeanInfo beanInfo = JavaBeanInfo.build(clazz, type, propertyNamingStrategy);
+```
+
