@@ -39,3 +39,4 @@ this.setCipherKey(cipherService.generateNewKey().getEncoded());
 ## 参考
 - https://www.cnblogs.com/loong-hon/p/10619616.html
 - https://www.codenong.com/cs106643678/
+- [Shiro权限验证绕过史](https://s31k31.github.io/2020/08/20/Shiro_Authentication_Bypass/)
