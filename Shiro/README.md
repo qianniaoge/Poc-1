@@ -1,6 +1,14 @@
 ## Shiro反序列化
-- [Java版payload生成](https://github.com/feihong-cs/ShiroExploit-Deprecated/blob/master/src/main/java/com/shiroexploit/core/AesEncrypt.java)
+- [Java版payload生成](https://github.com/shadowsock5/Poc/blob/master/Shiro/ShiroDeser.java)
 - [Python版payload生成](https://github.com/shadowsock5/Poc/blob/master/Shiro/shiro_deser.py)
+
+### 反序列化利用链
+从Shiro-core官方的pom.xml文件中可以看出，在项目通过pom.xml引入shiro-core时，会自动引入commons-beanutils。当shiro-core的版本改变时，CB的版本也会随之改变。通过测试发现，shiro从1.2.4到1.3.2依赖的都是CB-1.8.3。而在shiro-1.3.2的下一个版本1.4.0中依赖的CB是1.9.3，从这个shiro版本开始，引入shiro依赖的项目会依赖CC3.2.2。
+参考：
+- https://github.com/apache/commons-beanutils/blob/BEANUTILS_1_9_1/pom.xml#L278
+- https://github.com/apache/shiro/blob/shiro-root-1.4.0/pom.xml#L832
+- https://github.com/apache/shiro/blob/shiro-root-1.3.2/pom.xml
+- https://github.com/apache/shiro/blob/shiro-root-1.2.4/pom.xml#L617
 
 ### 说明
 - 1.2.4的key硬编码在`org\apache\shiro\mgt\AbstractRememberMeManager.java`这个文件里；
@@ -30,3 +38,4 @@ this.setCipherKey(cipherService.generateNewKey().getEncoded());
 
 ## 参考
 - https://www.cnblogs.com/loong-hon/p/10619616.html
+- https://www.codenong.com/cs106643678/
