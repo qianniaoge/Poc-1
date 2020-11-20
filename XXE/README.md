@@ -1,0 +1,3 @@
+- [9102年Java里的XXE](https://www.leadroyal.cn/?p=914)
+- [一篇文章带你深入理解漏洞之 XXE 漏洞](https://xz.aliyun.com/t/3357)
+- [A blind XXE injection callback handler. Uses HTTP and FTP to extract information.](https://github.com/TheTwitchy/xxer)
