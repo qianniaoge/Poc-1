@@ -40,3 +40,4 @@ this.setCipherKey(cipherService.generateNewKey().getEncoded());
 - https://www.cnblogs.com/loong-hon/p/10619616.html
 - https://www.codenong.com/cs106643678/
 - [Shiro权限验证绕过史](https://s31k31.github.io/2020/08/20/Shiro_Authentication_Bypass/)
+- [Shiro反序列化漏洞笔记二（检测篇）](http://xiashang.xyz/2020/09/05/Shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E7%AC%94%E8%AE%B0%E4%BA%8C%EF%BC%88%E6%A3%80%E6%B5%8B%E7%AF%87%EF%BC%89/)
