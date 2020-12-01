@@ -44,3 +44,11 @@ this.setCipherKey(cipherService.generateNewKey().getEncoded());
 - [深入利用Shiro反序列化漏洞](https://xz.aliyun.com/t/8445)
 - https://github.com/apache/shiro/blob/8751ce1c31848efa96242099ba908bd110540246/RELEASE-NOTES#L163
 - https://github.com/apache/shiro/blob/323698ed6e22e417a5e86e367906cddb29932bbe/crypto/cipher/src/main/java/org/apache/shiro/crypto/cipher/AesCipherService.java
+
+## Shiro反序列化利用工具
+- https://github.com/Ares-X/shiro-exploit
+- https://github.com/feihong-cs/ShiroExploit-Deprecated
+- https://github.com/wyzxxz/shiro_rce
+- https://github.com/pmiaowu/BurpShiroPassiveScan
+- https://github.com/potats0/shiroPoc
+- https://github.com/fupinglee/ShiroScan
