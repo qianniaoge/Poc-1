@@ -16,6 +16,7 @@ ref:
 - https://nvd.nist.gov/vuln/detail/CVE-2020-15871
 
 ### CVE-2020-11444 越权admin任意密码重置
+<= 3.21.2
 
 ref: 
 - https://github.com/threedr3am/learnjavabug/tree/93d57c428333f98b5927d02630737e639dcb226b/nexus/CVE-2020-11444
