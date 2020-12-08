@@ -1,13 +1,24 @@
 - [S2-059][CVE-2019-0230](https://cwiki.apache.org/confluence/display/WW/S2-059)
 - [S2-061][CVE-2020-17530](https://cwiki.apache.org/confluence/display/WW/S2-061)
 
-[S2-059]影响版本：
+### [S2-059]
+#### 影响版本：
 2.0.0 - 2.5.20
 
-[S2-061]影响版本：
+#### 解决方案
+升级到2.5.22及以上
+
+### [S2-061]
+#### 影响版本：
 2.0.0 - 2.5.25
+#### 解决方案
+升级到2.5.26及以上
+
 
 漏洞描述：
+官方描述：
+> Forced OGNL evaluation, when evaluated on raw user input in tag attributes, may lead to remote code execution - similar to S2-059.
+
 > 如果开发人员使用了 %{…} 语法，那么攻击者可以通过构造恶意的  OGNL  表达式，引发  OGNL  表达式二次解析，最终造成远程代码执行的影响。
 
 
