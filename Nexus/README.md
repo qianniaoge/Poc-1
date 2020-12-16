@@ -26,7 +26,7 @@ ref:
 - https://nvd.nist.gov/vuln/detail/CVE-2020-15871
 
 
-### CVE-2020-29436  XXE
+### CVE-2020-29436(NEXUS-25829)  XXE
 <=3.28.1（管理员权限）
 > The vulnerability allows an attacker with an administrative account in NXRM to configure the system in a way that allows them to view files on the filesystem, and to interact with any back-end or external systems that NXRM can access.
 
