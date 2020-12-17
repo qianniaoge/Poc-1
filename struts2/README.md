@@ -29,6 +29,7 @@
 - [CVE-2019-0230 s2-059 漏洞分析](https://www.cnblogs.com/ph4nt0mer/p/13512599.html)
 - [CVE-2019-0233： S2-060 拒绝服务漏洞分析](https://mp.weixin.qq.com/s/OJRxxvD9BnUEyzB0q0Z9yQ)
 - https://mp.weixin.qq.com/s/cBZ4P0GIH8jCpGfT2o02Rw
+- https://xz.aliyun.com/t/8653
 
 
 漏洞汇总：
