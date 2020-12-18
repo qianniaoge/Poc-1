@@ -2,6 +2,14 @@
 < 3.15.0
 ![](imgs/20190913044207.png)
 
+### CVE-2019-16530 Nexus Repository Manager 2 & 3, and Nexus IQ Server
+<= 2.14.14；<= 3.18.1（管理员权限）
+> An attacker with elevated priveledges can upload a specially crafted file.  That file can contain commands that will be run on the underlying systems as the user who owns the server process.  
+
+ref:
+- https://support.sonatype.com/hc/en-us/articles/360036132453-CVE-2019-16530-Nexus-Repository-Manager-2-3-and-Nexus-IQ-Server-Remote-Code-Execution-2019-09-19
+
+
 ### CVE-2020-10204/CVE-2020-10199
 <= 3.21.1（普通用户权限）
 ![](imgs/20200403130016.png)
@@ -19,7 +27,8 @@ ref:
 
 
 ### CVE-2020-15871 RCE
-< 3.25.1
+< 3.25.1（管理员权限）
+
 ref:
 - https://hackerone.com/reports/917843
 - https://support.sonatype.com/hc/en-us/articles/360052192693-CVE-2020-15871-Nexus-Repository-Manager-3-Remote-Code-Execution-2020-07-29
