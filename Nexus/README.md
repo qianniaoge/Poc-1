@@ -19,7 +19,7 @@ ref:
 
 
 ### CVE-2020-15871 RCE
-<= 3.25.1
+< 3.25.1
 ref:
 - https://hackerone.com/reports/917843
 - https://support.sonatype.com/hc/en-us/articles/360052192693-CVE-2020-15871-Nexus-Repository-Manager-3-Remote-Code-Execution-2020-07-29
