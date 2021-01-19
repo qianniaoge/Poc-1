@@ -5,3 +5,4 @@
 - [docker配置文件](https://gist.githubusercontent.com/LiveOverflow/8bf92dd86e5c481fb484af83c64e83b3/raw/461aa3839651d183f37a087720e94c3f0efba1d2/docker-compose.yml)
 - https://liveoverflow.com/gitlab-11-4-7-remote-code-execution-real-world-ctf-2018/
 - https://www.exploit-db.com/exploits/49257
+- https://github.com/dotPY-hax/gitlab_RCE
