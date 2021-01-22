@@ -27,7 +27,7 @@ this.setCipherKey(cipherService.generateNewKey().getEncoded());
 假设`/static` 路径不需要认证即可访问。
 
 绕过姿势：
-- /admin/index/
+- /admin/index%2f
 - /;/admin/index
 - /static;/admin/index
 - /static;/../admin/index
@@ -44,6 +44,7 @@ this.setCipherKey(cipherService.generateNewKey().getEncoded());
 - [深入利用Shiro反序列化漏洞](https://xz.aliyun.com/t/8445)
 - https://github.com/apache/shiro/blob/8751ce1c31848efa96242099ba908bd110540246/RELEASE-NOTES#L163
 - https://github.com/apache/shiro/blob/323698ed6e22e417a5e86e367906cddb29932bbe/crypto/cipher/src/main/java/org/apache/shiro/crypto/cipher/AesCipherService.java
+- https://jkme.github.io/cve-2016-6802-exp.html
 
 ## Shiro反序列化利用工具
 - https://github.com/Ares-X/shiro-exploit
