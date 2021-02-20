@@ -325,3 +325,4 @@ poc（加载自定义类）:
 - https://github.com/starnightcyber/VEF/blob/ebbdeed2556d56fd0a59796f72c8643f277a5151/scripts/weblogic-cve-2019-2729.py
 - https://docs.oracle.com/cd/E17802_01/products/products/jfc/tsc/articles/persistence2/beanbox_Folder.1/docs/javadoc/java/beans/XMLEncoder.html
 - [CVE-2019-2725/CNVD-C-2019-48814终章——报文回显](https://www.heibai.org/post/1370.html)
+- https://peterjson.medium.com/cve-2019-2725-revisited-14600c0e4018
