@@ -2,3 +2,4 @@
 - [一篇文章带你深入理解漏洞之 XXE 漏洞](https://xz.aliyun.com/t/3357)
 - [A blind XXE injection callback handler. Uses HTTP and FTP to extract information.](https://github.com/TheTwitchy/xxer)
 - [Java底层修改对XXE利用FTP通道的影响](http://scz.617.cn:8/misc/201911011122.txt)
+- [XXE bruteforce wordlist including local DTD payloads from https://github.com/GoSecure/dtd-finder](https://gist.github.com/honoki/d7035c3ccca1698ec7b541c77b9410cf)
