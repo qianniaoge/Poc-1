@@ -19,6 +19,7 @@ this.setCipherKey(cipherService.generateNewKey().getEncoded());
 可以直接调这个接口，这样得到的key就是随机的。当然开发者也可以通过配置文件配置，比如`shiro.ini`, `xxx-shiro-xml`等制定一个自己实现的RememberMeManager（继承自`CookieRememberMeManager`），然后`applications.properties`里面配置这个硬编码的seed。如果攻击者知道了这个seed，可以方便地拿到shiro的key。
 - 1.4.2以后，从`CBC`模式变成了`GCM`模式，需要相应地修改一下代码。
 
+
 ## Shiro权限绕过
 比如想要访问的敏感url为：
 ```
@@ -34,6 +35,8 @@ this.setCipherKey(cipherService.generateNewKey().getEncoded());
 - /static/..;/admin/index
 - /admin/index%25%32%46index
 - /admin/%3bindex
+- /admin/%20 或/admin/%20/
+- /admin/%2e 或/admin/%2e/
 
 
 ## 参考
@@ -45,6 +48,7 @@ this.setCipherKey(cipherService.generateNewKey().getEncoded());
 - https://github.com/apache/shiro/blob/8751ce1c31848efa96242099ba908bd110540246/RELEASE-NOTES#L163
 - https://github.com/apache/shiro/blob/323698ed6e22e417a5e86e367906cddb29932bbe/crypto/cipher/src/main/java/org/apache/shiro/crypto/cipher/AesCipherService.java
 - https://jkme.github.io/cve-2016-6802-exp.html
+- [Apache Shiro 两种姿势绕过认证分析（CVE-2020-17523）](https://paper.seebug.org/1478/)
 
 ## Shiro反序列化利用工具
 - https://github.com/Ares-X/shiro-exploit
