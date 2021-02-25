@@ -4,7 +4,8 @@
 - /eam/vib?id=/etc/hosts
 - /eam/vibd?id=/etc/hosts
 - /eam/vibd?id=C:\\ProgramData\\VMware\\vCenterServer\\cfg\\vmware-vpx\\vcdb.properties
-
+- /ui/vropspluginui/rest/services/checkmobregister
+- /ui/vropspluginui/rest/services/uploadova
 
 
 ### Demo
@@ -33,6 +34,7 @@ Server: Apache
 #
 # This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
 ```
+
 
 ### Ref
 - https://twitter.com/jas502n/status/1316992409088094209
