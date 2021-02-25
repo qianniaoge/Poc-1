@@ -38,4 +38,5 @@ Server: Apache
 
 ### Ref
 - https://twitter.com/jas502n/status/1316992409088094209
-- 
+- [CVE-2021-21972 Vmware vcenter未授权任意文件漏洞分析](https://www.cnblogs.com/potatsoSec/p/14444897.html)
+- [Unauthorized RCE in VMware vCenter](https://swarm.ptsecurity.com/unauth-rce-vmware/)
