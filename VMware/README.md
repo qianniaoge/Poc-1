@@ -6,6 +6,39 @@
 - /eam/vibd?id=C:\\ProgramData\\VMware\\vCenterServer\\cfg\\vmware-vpx\\vcdb.properties
 - /ui/vropspluginui/rest/services/checkmobregister
 - /ui/vropspluginui/rest/services/uploadova
+- /checkmobregister
+- /updatetelemetryInfo
+- /checkLicenseSuiteApi
+- /checkVsanLicenseValidity
+- /getvcdetails
+- /getstatus
+- /testvcconnection
+- /testvropsconnection
+- /dashboard
+- /capacity
+- /capacity/memory
+- /capacity/cpu
+- /capacity/storage
+- /license/allLicenses
+- /vcclusters
+- /vccontention
+- /vcclusteralerts
+- /inventoryscoreboard
+- /alerts
+- /vropsURL
+- /vcIP
+- /serverguid
+- /Isceienabled
+- /alertdetails
+- /vsanalertdetails
+- /osdetails
+- /vmdetails
+- /drs
+- 
+- POST /vropsinstallation content-type=application/json; charset=UTF-8
+- POST /uploadova
+- POST /configurevrops content-type=application/json; charset=UTF-8
+- 
 
 
 ### Demo
