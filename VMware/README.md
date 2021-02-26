@@ -38,7 +38,10 @@
 - POST /vropsinstallation content-type=application/json; charset=UTF-8
 - POST /uploadova
 - POST /configurevrops content-type=application/json; charset=UTF-8
-- 
+- C:\\ProgramData\\VMware\\vCenterServer\\logs\\vsphere-client\\logs\\dataservice.log
+- C:\\ProgramData\\VMware\\vCenterServer\\cfg\\vsphere-client\\compatibility-matrix.xml
+- C:\\ProgramData\\VMware\\vCenterServer\\cfg\\vsphere-client\\webclient.properties
+- C:\\ProgramData\\VMware\\vCenterServer\\cfg\\vmware-vpx\\vcdb.properties
 
 
 ### Demo
