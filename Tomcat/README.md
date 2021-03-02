@@ -15,3 +15,8 @@ Apache Tomcat 7.x < 7.0.104
 - https://github.com/masahiro331/CVE-2020-9484
 - https://y4er.com/post/cve-2020-9484-tomcat-session-rce/
 - https://www.cnblogs.com/potatsoSec/p/12931427.html
+
+
+### [CVE-2021-25329]
+
+- [CVE-2021-25329: Apache Tomcat Incomplete fix for CVE-2020-9484](https://seclists.org/oss-sec/2021/q1/184)
