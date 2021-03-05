@@ -64,3 +64,5 @@ Java版：
 ```
 参考：https://github.com/0nise/CVE-2020-2551/blob/master/CVE_2020_2551.java
 
+### CVE-2020-2551的payload构造
+- https://github.com/SummerSec/JavaLearnVulnerability/blob/master/weblogic/src/main/java/CVE20202551/Payload1Data.java
