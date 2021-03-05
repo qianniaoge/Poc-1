@@ -2,7 +2,7 @@
 
 ### 配置数据库
 ```bash
-sudo servie postgresql start
+sudo service postgresql start
 sudo su postgres
 psql
 create database confluence_5_8_15 owner confluence;
