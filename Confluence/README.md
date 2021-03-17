@@ -5,6 +5,7 @@
 sudo service postgresql start
 sudo su postgres
 psql
+create user confluence with password 'confluence';
 create database confluence_5_8_15 owner confluence;
 grant all privileges on database confluence_5_8_15 to confluence;
 \q
