@@ -31,6 +31,11 @@ sed -i "s/export CATALINA_OPTS/CATALINA_OPTS=\"-Xrunjdwp:transport=dt_socket,sus
 ```
 JVM_SUPPORT_RECOMMENDED_ARGS="-Xrunjdwp:transport=dt_socket,suspend=n,server=y,address=8346"    # for debug
 ```
+### Tomcat启动调试
+```
+.\bin\catalina.bat jpda start
+```
+启动之前需要在`bin\catalina.bat`中修改调试端口。修改`JPDA_ADDRESS`即可。
 
 
 ### 启动/停止Confluence
