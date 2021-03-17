@@ -19,11 +19,11 @@ unzip -q atlassian-confluence-5.8.15.zip
 cd atlassian-confluence-5.8.15
 # vi confluence/WEB-INF/classes/confluence-init.properties
 ```
-# 修改home目录
+### 修改home目录
 ```
 sed -i "s/\# confluence.home=\/var\/data\/confluence\//confluence.home=\/home\/77\/confluenceHome5.8.15/g" confluence/WEB-INF/classes/confluence-init.properties
 ```
-# 增加调试参数
+### 增加调试参数
 ```
 sed -i "s/export CATALINA_OPTS/CATALINA_OPTS=\"-Xrunjdwp:transport=dt_socket,suspend=n,server=y,address=12346 ${CATALINA_OPTS}\"  \# for debug\nexport CATALINA_OPTS/g" bin/setenv.sh
 ```
@@ -33,7 +33,7 @@ JVM_SUPPORT_RECOMMENDED_ARGS="-Xrunjdwp:transport=dt_socket,suspend=n,server=y,a
 ```
 
 
-# 启动/停止Confluence
+### 启动/停止Confluence
 ```
 bin/start-confluence.sh
 bin/stop-confluence.sh
