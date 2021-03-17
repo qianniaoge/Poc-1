@@ -18,7 +18,7 @@ wget https://product-downloads.atlassian.com/software/confluence/downloads/atlas
 unzip -q atlassian-confluence-5.8.15.zip
 cd atlassian-confluence-5.8.15
 # vi confluence/WEB-INF/classes/confluence-init.properties
-
+```
 # 修改home目录
 ```
 sed -i "s/\# confluence.home=\/var\/data\/confluence\//confluence.home=\/home\/77\/confluenceHome5.8.15/g" confluence/WEB-INF/classes/confluence-init.properties
@@ -31,10 +31,10 @@ sed -i "s/export CATALINA_OPTS/CATALINA_OPTS=\"-Xrunjdwp:transport=dt_socket,sus
 ```
 JVM_SUPPORT_RECOMMENDED_ARGS="-Xrunjdwp:transport=dt_socket,suspend=n,server=y,address=8346"    # for debug
 ```
-# 增加调试端口
 
 
 # 启动/停止Confluence
+```
 bin/start-confluence.sh
 bin/stop-confluence.sh
 ```
