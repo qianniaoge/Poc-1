@@ -13,6 +13,7 @@
 - /wls-wsat/ParticipantPortType11
 - /wls-wsat/RegistrationRequesterPortType11
 都可以用。
+参考：https://www.cnblogs.com/-mo-/p/11503707.html
 
 限制条件在于：服务器能否外联出网
 
