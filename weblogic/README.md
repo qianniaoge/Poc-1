@@ -66,3 +66,13 @@ Java版：
 
 ### CVE-2020-2551的payload构造
 - https://github.com/SummerSec/JavaLearnVulnerability/blob/master/weblogic/src/main/java/CVE20202551/Payload1Data.java
+
+
+
+### 如何在Windows机器调用其他机器的weblogic停止脚本
+
+编辑domain的bin目录中的stopWebLogic.cmd文件，找到“ADMIN_URL=t3://[IP]:[端口]”部分，[IP]一般为本机的主机名，[端口]一般为7001。将[IP]与[端口]分别修改为其他weblogic所在机器的IP与weblogic监听端口。执行修改后的stopWebLogic.cmd脚本并抓包。
+
+
+参考：
+- [修复weblogic的JAVA反序列化漏洞的多种方法](http://drops.xmd5.com/static/drops/web-13470.html)
