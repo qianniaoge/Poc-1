@@ -2,9 +2,16 @@
 - 10.3.6.0: `modules/com.bea.core.repackaged.springframework.spring_1.2.0.0_2-5-3.jar`
 - 12.1.3.0: `wlserver/modules/com.bea.core.repackaged.springframework.spring_1.5.0.0_2-5-3.jar`
 
-而且这两个path：
-- `/wls-wsat/CoordinatorPortType`
-- `/_async/AsyncResponseService`
+而且这几个path：
+- /_async/AsyncResponseService
+- /wls-wsat/CoordinatorPortType
+- /wls-wsat/CoordinatorPortType11
+- /wls-wsat/RegistrationPortTypeRPC
+- /wls-wsat/ParticipantPortType
+- /wls-wsat/RegistrationRequesterPortType
+- /wls-wsat/RegistrationPortTypeRPC11
+- /wls-wsat/ParticipantPortType11
+- /wls-wsat/RegistrationRequesterPortType11
 都可以用。
 
 限制条件在于：服务器能否外联出网
