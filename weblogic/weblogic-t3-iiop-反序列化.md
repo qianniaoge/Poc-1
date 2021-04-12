@@ -13,7 +13,8 @@ iiop/t3的gadget梳理：
 
 反序列化开端：
 
-###【CVE-2015-4852】：由于没有任何防御机制，直接使用CommonsCollections1即可利用；
+###【CVE-2015-4852】：由于没有任何防御机制，直接使用CommonsCollections1即可利用
+
 =》补丁：在三个地方设置检查：
 ```
 weblogic.rjvm.InboundMsgAbbrev.class::ServerChannelInputStream
@@ -23,7 +24,7 @@ weblogic.iiop.Utils.class
 后面的绕过其实都是不让payload过这些地方的检查。
 在weblogic.rjvm.InboundMsgAbbrev.ServerChannelInputStream#resolveClass方法中增加if判断，对拿到的class的名字进行isBlackListed方法判断，若在黑名单则抛出Unauthorized deserialization attempt异常。
 
-###【CVE-2016-0638】：绕过ServerChannelInputStream中的黑名单机制，先利用黑名单之外的weblogic.jms.common.StreamMessageImpl#readExternal，在该方法内部使用自己的ObjectInputStream的readObject方法，这样就绕过了CVE-2015-4852的补丁的黑名单机制。
+### 【CVE-2016-0638】：绕过ServerChannelInputStream中的黑名单机制，先利用黑名单之外的weblogic.jms.common.StreamMessageImpl#readExternal，在该方法内部使用自己的ObjectInputStream的readObject方法，这样就绕过了CVE-2015-4852的补丁的黑名单机制。
 gadget依然选择使用CommonsCollections1；
 利用方式：重写StreamMessageImpl类的writeExternal方法，将CommonsCollections1通过输出流写入；
 参考：https://y4er.com/post/weblogic-cve-2016-0638/
@@ -35,7 +36,8 @@ gadget依然选择使用CommonsCollections1；
 ![](imgs/20210412104051.png)
 
 
-###【CVE-2016-3510】
+### 【CVE-2016-3510】
+
 与CVE-2016-0638类似，也是把CVE-2015-4852的payload套进去了，从而绕过黑名单的限制。与CVE-2016-0638找到的weblogic.rjvm.InboundMsgAbbrev.ServerChannelInputStream不同，
 CVE-2016-3510是利用weblogic.corba.utils.MarshalledObject这个类，这个类有一些特性，比如其构造方法接收一个Object类型的参数，并且会通过writeObject将这个Object对象序列化之后赋值给this.objBytes；
 而其readResolve方法中，会new一个ObjectInputStream然后将this.objBytes反序列化。
