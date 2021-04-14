@@ -3,5 +3,6 @@
 - [Spring 全家桶各类 RCE 漏洞浅析](https://paper.seebug.org/1422/#_3)
 - [spring actuator restart logging.config rce](https://landgrey.me/blog/21/)
 - https://github.com/LandGrey/SpringBootVulExploit
+- [Spring Boot Fat Jar 写文件漏洞到稳定 RCE 的探索](https://landgrey.me/blog/22/)
 
 
