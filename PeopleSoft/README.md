@@ -19,6 +19,9 @@
 访问webshell，实现RCE.
 ```
 
+#### Demo
+![](imgs/1613977109935_2.jpg)
+
 ### 反序列化
 ```http
 POST /monitor/%SITE_NAME% HTTP/1.1
