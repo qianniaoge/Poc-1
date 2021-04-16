@@ -9,3 +9,16 @@
 
 
 ### [Remote code execution when uploading specially crafted image files](https://about.gitlab.com/releases/2021/04/14/security-release-gitlab-13-10-3-released/)
+
+
+### [Gitlab markdown 远程代码执行漏洞](https://mp.weixin.qq.com/s/d8jeaI3rf94MLc2TYbKgnQ)
+影响版本：
+Gitlab CE/EE < 13.9.4
+
+Gitlab CE/EE < 13.8.6
+
+Gitlab CE/EE < 13.7.9
+
+参考：
+- https://devcraft.io/2020/10/20/github-pages-multiple-rces-via-kramdown-config.html
+- https://wx.zsxq.com/dweb2/index/topic_detail/582521144524584
