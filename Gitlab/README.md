@@ -6,3 +6,6 @@
 - https://liveoverflow.com/gitlab-11-4-7-remote-code-execution-real-world-ctf-2018/
 - https://www.exploit-db.com/exploits/49257
 - https://github.com/dotPY-hax/gitlab_RCE
+
+
+### [Remote code execution when uploading specially crafted image files](https://about.gitlab.com/releases/2021/04/14/security-release-gitlab-13-10-3-released/)
