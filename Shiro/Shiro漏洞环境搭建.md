@@ -5,10 +5,15 @@ https://github.com/apache/shiro
 修改之后的项目：https://github.com/shadowsock5/shiro-root
 在IDEA中导出war，放到tomcat的webapps目录下，重启tomcat，自动解压缩war包。
 详见：
+
 ![](imgs/20210419103605.png)
+
 ![](imgs/20210419103618.png)
+
 ![](imgs/20210419103624.png)
+
 ![](imgs/20210419103635.png)
+
 ```
 [cqq@localhost WEB-INF]$ pwd
 /home/cqq/repos/apache-tomcat-8.5.59/webapps/shiro-web-1.2.4/WEB-INF
