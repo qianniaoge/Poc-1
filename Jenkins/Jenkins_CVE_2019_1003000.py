@@ -26,6 +26,9 @@ CVE-2019-1003000
 - http://blog.orange.tw/2019/02/abusing-meta-programming-for-unauthenticated-rce.html
 
 至少需要一个具有Overall/Read权限的用户；但是如果Anonymous用户被授予这个权限，也能在不登录情况下利用
+-> /configureSecurity/
+-> Authorization
+-> Allow anonymous read access
 '''
 class Jenkins_RCE_2019_1003000_POC(POCBase):
     vulID = 'Jenkins-CVE-2019-1003000'
