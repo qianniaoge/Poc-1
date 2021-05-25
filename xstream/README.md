@@ -66,6 +66,16 @@ Content-Length: 3105
 </java.util.PriorityQueue>
 ```
 
+响应：
+```
+HTTP/1.1 500 
+Content-Type: application/json;charset=UTF-8
+Date: Tue, 25 May 2021 02:20:40 GMT
+Connection: close
+Content-Length: 828
+
+{"timestamp":1621909240933,"status":500,"error":"Internal Server Error","exception":"com.thoughtworks.xstream.converters.ConversionException","message":"Failed calling method\n---- Debugging information ----\nmessage             : Failed calling method\ncause-exception     : com.thoughtworks.xstream.converters.ConversionException\ncause-message       : \nmethod              : java.util.PriorityQueue.readObject()\nclass               : java.util.PriorityQueue\nrequired-type       : java.util.PriorityQueue\nconverter-type      : com.thoughtworks.xstream.converters.reflection.SerializableConverter\npath                : /java.util.PriorityQueue/java.util.PriorityQueue/javax.naming.ldap.Rdn$RdnEntry[2]/value/message/sm/nullIter\nversion             : 1.4.13\n-------------------------------","path":"/xstream/deserialize"}
+```
 
 
 ### Ref
