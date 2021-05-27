@@ -31,6 +31,19 @@ mvn dependency:tree -Dincludes=com.alibaba:fastjson -Dverbose
 
 参考：https://mvnrepository.com/artifact/com.aliyun.openservices/aliyun-log/0.6.63
 
+如果注释掉最外部的直接依赖的fastjson 1.2.24，结果如下：
+```
+[INFO] +- com.t.c.m:m.c.p:jar:1.0.08:compile
+[INFO] |  +- com.alibaba:fastjson:jar:1.2.48:compile
+[INFO] |  \- com.t.t:t-c:jar:4.0.7:compile (version managed from 2.3.4.58)
+[INFO] |     \- com.t.v:v-c:jar:4.7.4:compile (version managed from 4.6.2)
+[INFO] |        \- (com.alibaba:fastjson:jar:1.2.48:compile - version managed from 1.1.41; omitted for duplicate)
+```
+最终项目用的fastjson版本是1.2.48.
+使用这个命令可以查看简单结果：
+```
+mvn dependency:tree -Dincludes=com.alibaba:fastjson
+```
 
 ## poc for all versions
 
