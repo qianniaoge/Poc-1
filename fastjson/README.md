@@ -4,11 +4,33 @@
 
 
 
-## fastjson detection
+
+## fastjson黑盒检测
 ```json
 {"@type":"java.net.Inet4Address","val":"dnslog"}
 {"@type":"java.net.Inet6Address","val":"dnslog"}
 ```
+
+## fastjson白盒检测
+```
+mvn dependency:tree -Dincludes=com.alibaba:fastjson -Dverbose
+```
+只有直接依赖，没有间接以来的结果示例：
+```
+[INFO] sec:java-sec-code:jar:1.0.0
+[INFO] \- com.alibaba:fastjson:jar:1.2.60:compile
+```
+有间接依赖的示例：
+```
+[INFO] +- com.alibaba:fastjson:jar:1.2.24:compile
+[INFO] +- com.aliyun.openservices:aliyun-log-producer:jar:0.3.3:compile
+[INFO] |  \- com.aliyun.openservices:aliyun-log:jar:0.6.33:compile
+[INFO] |     \- (com.alibaba:fastjson:jar:1.2.48:compile - version managed from 1.2.38; omitted for conflict with 1.2.24)
+```
+虽然这个例子由于pom中直接依赖了fastjson 1.2.24，导致`aliyun-log-producer`依赖的1.2.38版本失效。
+
+参考：https://mvnrepository.com/artifact/com.aliyun.openservices/aliyun-log/0.6.63
+
 
 ## poc for all versions
 
