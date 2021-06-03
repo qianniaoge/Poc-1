@@ -9,6 +9,15 @@
 ref:
 - https://support.sonatype.com/hc/en-us/articles/360036132453-CVE-2019-16530-Nexus-Repository-Manager-2-3-and-Nexus-IQ-Server-Remote-Code-Execution-2019-09-19
 
+### CVE-2019-15893 Nexus Repository Manager 2 - Remote Code Execution
+<= 2.14.15（管理员权限）
+>  The vulnerability allows for an attacker with administrative access to NXRM to create repostories that can grant access to read/execute system data outside the scope of NXRM. 
+
+
+
+ref:
+- https://support.sonatype.com/hc/en-us/articles/360035055794
+
 
 ### CVE-2020-10204/CVE-2020-10199
 <= 3.21.1（普通用户权限）
