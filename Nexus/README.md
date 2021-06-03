@@ -1,4 +1,4 @@
-### CVE-2019-5475
+### CVE-2019-5475/CVE-2019-15588
 < 3.15.0
 ![](imgs/20190913044207.png)
 
@@ -37,6 +37,8 @@ ref:
 
 ### CVE-2020-15871 RCE
 < 3.25.1（管理员权限）
+> A remote code execution vulnerability (CVE-2020-15871) has been discovered in Nexus Repository Manager 3.
+A user with the right permissions can run arbitrary code as the user running the Nexus Repository Manager server. Alternatively, an attacker could trick a user with the right permissions into running arbitrary code as the user running the Nexus Repository Manager server. 
 
 ref:
 - https://hackerone.com/reports/917843
