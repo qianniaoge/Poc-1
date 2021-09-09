@@ -22,3 +22,4 @@ Gitlab CE/EE < 13.7.9
 参考：
 - https://devcraft.io/2020/10/20/github-pages-multiple-rces-via-kramdown-config.html
 - https://wx.zsxq.com/dweb2/index/topic_detail/582521144524584
+- [CVE-2021–22201: Arbitrary file read on Gitlab](https://tradahacking.vn/cve-2021-22201-arbitrary-file-read-on-gitlab-d84d77cd83e3)
