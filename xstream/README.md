@@ -81,3 +81,4 @@ Content-Length: 828
 ### Ref
 
 - [XStream 反序列化命令执行漏洞（CVE-2021-29505）](https://github.com/vulhub/vulhub/blob/fcc5f821cb282b9053dbae3322512e341f365f3d/xstream/CVE-2021-29505/README.zh-cn.md)
+- [Java安全之XStream 漏洞分析](https://www.cnblogs.com/nice0e3/p/15046895.html#0x02-xstream-%E4%BD%BF%E7%94%A8%E4%B8%8E%E8%A7%A3%E6%9E%90)
