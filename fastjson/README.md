@@ -1,5 +1,6 @@
 ## Ref
 - http://dream0x01.com/spear-framework/#/fastjson/fastjson
+- https://github.com/welk1n/FastjsonPocs
 - https://github.com/threedr3am/learnjavabug/blob/master/fastjson/src/main/java/com/threedr3am/bug/fastjson/rce
 - [Fastjson 渗透测试指北](https://mp.weixin.qq.com/s/QGyb1Zv4F9IvmjKfiCD_4Q)
 
