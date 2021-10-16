@@ -519,3 +519,68 @@ java.lang.IllegalArgumentException: javax.naming.NamingException: problem genera
 	at com.alibaba.fastjson.parser.deserializer.FastjsonASMDeserializer_1_HikariConfig.deserialze(Unknown Source)
 	at com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer.deserialze(JavaBeanDeserializer.java:284)
 ```
+
+
+### commons-io
+
+2.4版本的log
+```
+Exception in thread "main" java.lang.NullPointerException
+	at org.apache.commons.io.output.WriterOutputStream.processInput(WriterOutputStream.java:280)
+	at org.apache.commons.io.output.WriterOutputStream.write(WriterOutputStream.java:213)
+	at org.apache.commons.io.output.WriterOutputStream.write(WriterOutputStream.java:241)
+	at org.apache.commons.io.input.TeeInputStream.read(TeeInputStream.java:110)
+	at org.apache.commons.io.input.BOMInputStream.getBOM(BOMInputStream.java:218)
+	at com.alibaba.fastjson.serializer.ASMSerializer_3_BOMInputStream.write(Unknown Source)
+	at com.alibaba.fastjson.serializer.MapSerializer.write(MapSerializer.java:271)
+	at com.alibaba.fastjson.serializer.MapSerializer.write(MapSerializer.java:44)
+	at com.alibaba.fastjson.serializer.JSONSerializer.write(JSONSerializer.java:285)
+	at com.alibaba.fastjson.JSON.toJSONString(JSON.java:973)
+	at com.alibaba.fastjson.JSON.toString(JSON.java:967)
+	at com.alibaba.fastjson.JSONObject.getString(JSONObject.java:325)
+	at com.alibaba.fastjson.serializer.MiscCodec.deserialze(MiscCodec.java:279)
+	at com.alibaba.fastjson.parser.DefaultJSONParser.parseObject(DefaultJSONParser.java:395)
+	at com.alibaba.fastjson.parser.DefaultJSONParser.parseObject(DefaultJSONParser.java:565)
+	at com.alibaba.fastjson.parser.DefaultJSONParser.parse(DefaultJSONParser.java:1401)
+	at com.alibaba.fastjson.parser.DefaultJSONParser.parse(DefaultJSONParser.java:1367)
+	at com.alibaba.fastjson.JSON.parse(JSON.java:183)
+	at com.alibaba.fastjson.JSON.parse(JSON.java:193)
+	at com.alibaba.fastjson.JSON.parse(JSON.java:149)
+	at com.alibaba.fastjson.JSON.parseObject(JSON.java:254)
+	at com.cqq.fastjsonPOC.TestCommonsIO.main(TestCommonsIO.java:210)
+```
+2.6版本的log：
+```
+Exception in thread "main" com.alibaba.fastjson.JSONException: create instance error, null, public org.apache.commons.io.output.WriterOutputStream(java.io.Writer,java.nio.charset.Charset,int,boolean)
+	at com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer.deserialze(JavaBeanDeserializer.java:1016)
+	at com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer.deserialze(JavaBeanDeserializer.java:288)
+	at com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer.deserialze(JavaBeanDeserializer.java:284)
+	at com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer.deserialze(JavaBeanDeserializer.java:808)
+	at com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer.deserialze(JavaBeanDeserializer.java:288)
+	at com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer.deserialze(JavaBeanDeserializer.java:284)
+	at com.alibaba.fastjson.parser.DefaultJSONParser.parseObject(DefaultJSONParser.java:395)
+	at com.alibaba.fastjson.parser.DefaultJSONParser.parseObject(DefaultJSONParser.java:565)
+	at com.alibaba.fastjson.parser.DefaultJSONParser.parseObject(DefaultJSONParser.java:565)
+	at com.alibaba.fastjson.parser.DefaultJSONParser.parse(DefaultJSONParser.java:1401)
+	at com.alibaba.fastjson.parser.DefaultJSONParser.parse(DefaultJSONParser.java:1367)
+	at com.alibaba.fastjson.serializer.MiscCodec.deserialze(MiscCodec.java:261)
+	at com.alibaba.fastjson.parser.DefaultJSONParser.parseObject(DefaultJSONParser.java:395)
+	at com.alibaba.fastjson.parser.DefaultJSONParser.parseObject(DefaultJSONParser.java:565)
+	at com.alibaba.fastjson.parser.DefaultJSONParser.parse(DefaultJSONParser.java:1401)
+	at com.alibaba.fastjson.parser.DefaultJSONParser.parse(DefaultJSONParser.java:1367)
+	at com.alibaba.fastjson.JSON.parse(JSON.java:183)
+	at com.alibaba.fastjson.JSON.parse(JSON.java:193)
+	at com.alibaba.fastjson.JSON.parse(JSON.java:149)
+	at com.alibaba.fastjson.JSON.parseObject(JSON.java:254)
+	at com.cqq.fastjsonPOC.TestCommonsIO.main(TestCommonsIO.java:210)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer.deserialze(JavaBeanDeserializer.java:1012)
+	... 20 more
+Caused by: java.lang.NullPointerException
+	at org.apache.commons.io.output.WriterOutputStream.<init>(WriterOutputStream.java:144)
+	... 25 more
+```
