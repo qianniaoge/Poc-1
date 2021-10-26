@@ -8,7 +8,14 @@
 - https://github.com/dotPY-hax/gitlab_RCE
 
 
-### [Remote code execution when uploading specially crafted image files](https://about.gitlab.com/releases/2021/04/14/security-release-gitlab-13-10-3-released/)
+### [CVE-2021-22205][Remote code execution when uploading specially crafted image files](https://about.gitlab.com/releases/2021/04/14/security-release-gitlab-13-10-3-released/)
+参考：
+- https://www.cnblogs.com/ybit/p/14918949.html
+- [GitLab CE CVE-2021-22205 in the wild](https://security.humanativaspa.it/gitlab-ce-cve-2021-22205-in-the-wild/)
+- [RCE via unsafe inline Kramdown options when rendering certain Wiki pages](https://hackerone.com/reports/1125425)
+- https://github.com/ctrlsam/GitLab-11.4.7-RCE
+- https://github.com/CsEnox/GitLab-Wiki-RCE
+- https://github.com/mr-r3bot/Gitlab-CVE-2021-22205
 
 
 ### [Gitlab markdown 远程代码执行漏洞](https://mp.weixin.qq.com/s/d8jeaI3rf94MLc2TYbKgnQ)
