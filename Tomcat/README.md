@@ -21,3 +21,7 @@ Apache Tomcat 7.x < 7.0.104
 
 - [CVE-2021-25329: Apache Tomcat Incomplete fix for CVE-2020-9484](https://seclists.org/oss-sec/2021/q1/184)
 - http://blog.nsfocus.net/cve-2021-25329/
+
+### [CVE-2020-13935] WebSocket Vulnerability in Apache Tomcat
+
+- https://github.com/RedTeamPentesting/CVE-2020-13935
