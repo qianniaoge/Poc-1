@@ -16,6 +16,7 @@
 - https://github.com/ctrlsam/GitLab-11.4.7-RCE
 - https://github.com/CsEnox/GitLab-Wiki-RCE
 - https://github.com/mr-r3bot/Gitlab-CVE-2021-22205
+- https://github.com/projectdiscovery/nuclei-templates/blob/2d19236680fcf292c43734d6d524464396d294ae/cves/2021/CVE-2021-22205.yaml
 
 
 ### [Gitlab markdown 远程代码执行漏洞](https://mp.weixin.qq.com/s/d8jeaI3rf94MLc2TYbKgnQ)
