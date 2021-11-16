@@ -25,3 +25,16 @@ Apache Tomcat 7.x < 7.0.104
 ### [CVE-2020-13935] WebSocket Vulnerability in Apache Tomcat
 
 - https://github.com/RedTeamPentesting/CVE-2020-13935
+
+### [CVE-2020-13943] HTTP Request Smuggling
+受影响组件：
+```
+org.apache.tomcat.embed:tomcat-embed-core
+```
+
+参考：
+- https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-1017119
+- https://github.com/apache/tomcat/commit/1bbc650cbc3f08d85a1ec6d803c47ae53a84f3bb
+
+其他各种漏洞参考：
+https://snyk.io/vuln/maven:org.apache.tomcat.embed%3Atomcat-embed-core
