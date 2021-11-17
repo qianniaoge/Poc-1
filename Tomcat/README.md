@@ -26,7 +26,7 @@ Apache Tomcat 7.x < 7.0.104
 
 - https://github.com/RedTeamPentesting/CVE-2020-13935
 
-### [CVE-2020-13943] HTTP Request Smuggling
+### [CVE-2020-13943] HTTP/2 Request Smuggling
 受影响组件：
 ```
 org.apache.tomcat.embed:tomcat-embed-core
@@ -38,3 +38,6 @@ org.apache.tomcat.embed:tomcat-embed-core
 
 其他各种漏洞参考：
 https://snyk.io/vuln/maven:org.apache.tomcat.embed%3Atomcat-embed-core
+
+### [CVE-2020-11996] HTTP/2 拒绝服务攻击漏洞
+https://github.com/rusakovichma/tomcat-embed-core-9.0.31-CVE-2020-11996/blob/master/test/org/apache/coyote/http2/TestHttp2Section_5_1.java
