@@ -1,0 +1,2 @@
+- [Authentication bypass for viewing and deletions of snapshots](https://github.com/advisories/GHSA-69j6-29vr-p3j9)
+- https://github.com/projectdiscovery/nuclei-templates/blob/master/cves/2021/CVE-2021-39226.yaml
