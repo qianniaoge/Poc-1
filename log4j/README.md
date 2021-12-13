@@ -23,3 +23,5 @@ ${${::-j}${::-n}${::-d}${::-i}:${::-l}${::-d}${::-a}${::-p}://${hostName}.${env:
 ### Ref
 - https://github.com/projectdiscovery/nuclei-templates/blob/master/cves/2021/CVE-2021-44228.yaml
 - https://gist.github.com/ZephrFish/32249cae56693c1e5484888267d07d39
+- https://github.com/tangxiaofeng7/CVE-2021-44228-Apache-Log4j-Rce
+- https://github.com/jas502n/Log4j2-CVE-2021-44228
