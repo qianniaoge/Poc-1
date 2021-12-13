@@ -33,3 +33,4 @@ mvn dependency:tree -Dincludes=org.apache.logging.log4j:log4j-core
 - http://slf4j.org/log4shell.html
 - https://github.com/cldrn/codeql-queries/blob/master/log4j-injection.ql
 - [Apache Log4j2 漏洞影响面查询](https://log4j2.huoxian.cn/layout)
+- [Security Advisories / Bulletins linked to Log4Shell (CVE-2021-44228)](https://gist.github.com/SwitHak/b66db3a06c2955a9cb71a8718970c592)
