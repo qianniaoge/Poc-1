@@ -25,3 +25,5 @@ ${${::-j}${::-n}${::-d}${::-i}:${::-l}${::-d}${::-a}${::-p}://${hostName}.${env:
 - https://gist.github.com/ZephrFish/32249cae56693c1e5484888267d07d39
 - https://github.com/tangxiaofeng7/CVE-2021-44228-Apache-Log4j-Rce
 - https://github.com/jas502n/Log4j2-CVE-2021-44228
+- http://slf4j.org/log4shell.html
+- https://github.com/cldrn/codeql-queries/blob/master/log4j-injection.ql
