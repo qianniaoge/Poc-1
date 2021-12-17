@@ -38,3 +38,5 @@ mvn dependency:tree -Dincludes=org.apache.logging.log4j:log4j-core
 - [log4j-jndi-be-gone: A simple mitigation for CVE-2021-44228](https://research.nccgroup.com/2021/12/12/log4j-jndi-be-gone-a-simple-mitigation-for-cve-2021-44228/)
 - [Detection rules to look for Log4J usage and exploitation](https://github.com/timb-machine/log4j)
 - https://github.com/back2root/log4shell-rex
+- [Log4j影响列表](https://github.com/cisagov/log4j-affected-db)
+- [一个针对防御 log4j2 CVE-2021-44228 漏洞的 RASP 工具](https://github.com/boundaryx/cloudrasp-log4j2)
