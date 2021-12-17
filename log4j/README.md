@@ -36,4 +36,4 @@ mvn dependency:tree -Dincludes=org.apache.logging.log4j:log4j-core
 - [Security Advisories / Bulletins linked to Log4Shell (CVE-2021-44228)](https://gist.github.com/SwitHak/b66db3a06c2955a9cb71a8718970c592)
 - https://github.com/jfrog/log4j-tools
 - [log4j-jndi-be-gone: A simple mitigation for CVE-2021-44228](https://research.nccgroup.com/2021/12/12/log4j-jndi-be-gone-a-simple-mitigation-for-cve-2021-44228/)
-- [Detection rules to look for Log4J usage and exploitation]()
+- [Detection rules to look for Log4J usage and exploitation](https://github.com/timb-machine/log4j)
