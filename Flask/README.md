@@ -47,3 +47,6 @@ print(rv)
 ```
 
 在ubuntu下验证成功：。
+
+## Ref
+- [Python Deserialization on Integrated AWS DDB Flask App](https://tradahacking.vn/python-deserialization-on-integrated-aws-ddb-flask-app-cd236d63f2da)
